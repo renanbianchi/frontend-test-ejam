@@ -14,7 +14,7 @@ export function DiscountCard({
 }: DiscountCardProps) {
   const discountPercentage = ((fullPrice - discountedPrice) / fullPrice) * 100
   return (
-    <Container className="flex flex-row items-center xl:text-base text-sm mt-[32px] py-3 px-4 gap-4 bg-[#EDF3FD]">
+    <Container className="flex flex-row rounded-[10px] items-center xl:text-base text-sm mt-[32px] py-3 px-4 gap-4 bg-[#EDF3FD]">
       <div className="flex text-xs items-center justify-center xl:w-[32px] xl:h-[32px] p-[10px] w-[24px] h-[24px] rounded-full bg-[#2C7EF8] font-[600]">
         %
       </div>
