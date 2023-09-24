@@ -14,7 +14,7 @@ interface StepProps {
 
 export function Step({ step, stage, isCurrent, isDone }: StepProps) {
   return (
-    <Container className="flex flex-col xl:flex-row justify-center items-center xl:gap-5 gap-2 text-black">
+    <Container className="flex flex-col xl:flex-row items-center justify-between xl:gap-5 gap-2 text-black">
       {isDone ? (
         <div>
           <TickCircle width="40px" height="40px" />
@@ -30,7 +30,7 @@ export function Step({ step, stage, isCurrent, isDone }: StepProps) {
           {step}
         </div>
       )}
-      <div className="flex xl:text-xl text-xs whitespace-nowrap">
+      <div className="flex xl:text-xl text-xs items-center whitespace-nowrap">
         <span
           className={`xl:flex hidden font-${isCurrent ? `bold` : `medium`}`}
         >
