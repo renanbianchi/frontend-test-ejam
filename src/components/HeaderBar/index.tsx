@@ -12,6 +12,28 @@ import { LeftArrow } from '../../../assets/Icons/Left Arrow'
 import { RightArrow } from '../../../assets/Icons/Right Arrow'
 
 export function HeaderBar() {
+  const headerItems = [
+    {
+      itemNumber: 0,
+      icon: CheckmarkStarburst20Regular,
+      content: '30-DAY SATISFACTION GUARANTEE',
+    },
+    {
+      itemNumber: 1,
+      icon: PiTruckLight,
+      content: 'FREE DELIVERY ON ORDERS OVER $40.00',
+    },
+    {
+      itemNumber: 2,
+      icon: mdiCardsHeartOutline,
+      content: '50.000+ HAPPY CUSTOMERS',
+    },
+    {
+      itemNumber: 3,
+      icon: ArrowSyncCheckmark20Regular,
+      content: 'FREE DELIVERY ON ORDERS OVER $40.00',
+    },
+  ]
   const [selectedItem, setSelectedItem] = useState(0)
 
   const handleNextClick = () => {
@@ -32,26 +54,16 @@ export function HeaderBar() {
       >
         <LeftArrow />
       </button>
-      <TextIcon
-        isDisabled={selectedItem !== 0}
-        icon={CheckmarkStarburst20Regular}
-        content="30-DAY SATISFACTION GUARANTEE"
-      />
-      <TextIcon
-        isDisabled={selectedItem !== 1}
-        icon={PiTruckLight}
-        content="FREE DELIVERY ON ORDERS OVER $40.00"
-      />
-      <TextIcon
-        isDisabled={selectedItem !== 2}
-        icon={mdiCardsHeartOutline}
-        content="50.000+ HAPPY CUSTOMERS"
-      />
-      <TextIcon
-        isDisabled={selectedItem !== 3}
-        icon={ArrowSyncCheckmark20Regular}
-        content="FREE DELIVERY ON ORDERS OVER $40.00"
-      />
+      {headerItems.map((item) => {
+        return (
+          <TextIcon
+            key={item.itemNumber}
+            isDisabled={selectedItem !== item.itemNumber}
+            icon={item.icon}
+            content={item.content}
+          />
+        )
+      })}
       <button
         className="sm:hidden"
         type="button"
