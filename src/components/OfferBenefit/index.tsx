@@ -41,7 +41,7 @@ export function OfferBenefit({
       <span
         className={`font-${
           isBoldPositionOnRight ? `bold` : `normal`
-        } text-[#4D5254`}
+        } text-[#4D5254]`}
       >
         {isBoldPositionOnRight ? bold : content}
       </span>
