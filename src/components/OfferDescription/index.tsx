@@ -8,7 +8,9 @@ interface OfferDescription {
 export function OfferDescription({ content, className }: OfferDescription) {
   return (
     <Container className={className}>
-      <span className="text-[#4D5254] xl:text-base text-xs w-[398px] ">{content}</span>
+      <span className="text-[#4D5254] xl:text-base text-xs xl:w-[398px]">
+        {content}
+      </span>
     </Container>
   )
 }
