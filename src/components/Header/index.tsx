@@ -9,7 +9,7 @@ export function Header() {
   return (
     <Container className="flex justify-between p-5 xl:justify-between xl:py-[1.875rem] xl:px-[7.938rem] text-black">
       <Image
-        className="w-[106.67px] h-[20px] xl:w-auto"
+        className="w-[106.67px] h-[20px] xl:w-[192.36px] xl:h-[36px] "
         src={Clarifion_logo}
         alt="Clarifion logo"
       />
