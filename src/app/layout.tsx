@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
+import favicon from '../../assets/Icons/airfav_32x32.webp'
 
 const manrope = Manrope({
   weight: ['300', '400', '500', '600', '700'],
@@ -19,6 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <link rel="icon" href={favicon.src} type="webp" sizes="32x32>" />
       <body className={manrope.className}>{children}</body>
     </html>
   )
