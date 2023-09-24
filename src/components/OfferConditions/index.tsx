@@ -20,15 +20,21 @@ export function OfferConditions() {
     { cardName: ApplePay },
     { cardName: Amex },
   ]
+
+  const conditions = {
+    condition1: 'Free Shipping',
+    condition2: 'Secure 256-Bit SSL Encryption.',
+  }
+
   return (
     <Container>
       <div className="flex flex-col items-center xl:gap-0 gap-3 xl:flex-row border-solid border-[1px] rounded-[4px] border-[#CFCFCF] mt-[12px]">
         <div className="xl:gap-4 gap-3 flex whitespace-nowrap flex-row pt-2 xl:py-2 px-[16px] text-[#4D5254]">
-          <span className="text-xs">Free Shipping</span>
+          <span className="text-xs">{conditions.condition1}</span>
           <div className="border-l-[1px]" />
           <div className="flex flex-row xl:border-r-2 gap-[10px] items-center justify-center ">
             <LockIcon />
-            <span className="text-xs">Secure 256-Bit SSL Encryption.</span>
+            <span className="text-xs">{conditions.condition2}</span>
           </div>
           <div className="hidden xl:flex xl:flex-row">
             <Cards cards={cards} />

@@ -1,7 +1,7 @@
 import { Container } from '../Container'
 
 interface OfferTitleProps {
-  productName: string
+  itemName: string
   discountedPrice: number
   quantity: number
 }
@@ -9,12 +9,12 @@ interface OfferTitleProps {
 export function OfferTitle({
   discountedPrice,
   quantity,
-  productName,
+  itemName,
 }: OfferTitleProps) {
   return (
     <Container className="xl:text-[32px] text-[#000000] text-2xl xl:text-left text-center">
       <span className="text-[#2C7EF8]">ONE TIME ONLY</span> Special Price For{' '}
-      {quantity} Extra {productName} For Only{' '}
+      {quantity} Extra {itemName} For Only{' '}
       <span className="text-[#2C7EF8]">${discountedPrice / quantity} Each</span>{' '}
       ($
       {discountedPrice} Total!)

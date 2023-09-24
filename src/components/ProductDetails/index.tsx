@@ -18,9 +18,27 @@ import { OfferRefuse } from '../OfferRefuse'
 import { SatisfactionSeal } from '../SatisfactionSeal'
 
 export function ProductDetails() {
+  const productInfo = {
+    itemName: 'Clarifion',
+    productName: 'Clarifion Air Ionizer',
+    quantity: 6,
+    discountedPrice: 84,
+    fullPrice: 180,
+    grade: 5,
+    inStock: 12,
+    description: "Simply plug a Clarifion into any standard outlet and replace bulky, expensive air purifiers with a simple."
+  }
+  const button = {
+    acceptMessage: 'YES - CLAIM MY DISCOUNT',
+  }
+
   return (
     <Container className=" xl:max-w-[550px] m-0">
-      <OfferTitle productName="Clarifion" quantity={6} discountedPrice={84} />
+      <OfferTitle
+        itemName={productInfo.itemName}
+        quantity={productInfo.quantity}
+        discountedPrice={productInfo.discountedPrice}
+      />
       <div className="flex flex-row xl:gap-6 gap-4 mt-8">
         <div className="w-fit h-fit rounded-[10px] bg-[#2C7EF8]">
           <Image
@@ -32,34 +50,32 @@ export function ProductDetails() {
         </div>
         <div className="flex flex-col xl:gap-[5px] gap-4">
           <TitleAndPrice
-            title="Clarifion Air Ionizer"
-            discountedPrice={84}
-            fullPrice={180}
+            title={productInfo.productName}
+            discountedPrice={productInfo.discountedPrice}
+            fullPrice={productInfo.fullPrice}
           />
-          <Stars grade={5} />
-          <StockCard quantity={12} />
+          <Stars grade={productInfo.grade} />
+          <StockCard quantity={productInfo.inStock} />
           <OfferDescription
             className="hidden xl:flex "
-            content="Simply plug a Clarifion into any standard outlet and replace bulky,
-        expensive air purifiers with a simple."
+            content={productInfo.description}
           />
         </div>
       </div>
       <OfferDescription
         className="xl:hidden inline-flex mt-4 text-center text-xs"
-        content="Simply plug a Clarifion into any standard outlet and replace bulky,
-        expensive air purifiers with a simple."
+        content={productInfo.description}
       />
       <OfferBenefits />
       <DiscountCard
-        quantity={6}
-        productName="Clarifision"
-        fullPrice={180}
-        discountedPrice={84}
+        quantity={productInfo.quantity}
+        productName={productInfo.itemName}
+        fullPrice={productInfo.fullPrice}
+        discountedPrice={productInfo.discountedPrice}
       />
       <Button
         className="mt-8"
-        content="YES - CLAIM MY DISCOUNT"
+        content={button.acceptMessage}
         icon={ArrowRight12Filled}
       />
       <OfferConditions />
