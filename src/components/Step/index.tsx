@@ -1,9 +1,6 @@
-;`use client`
+'use client'
 import { Container } from '../Container'
-
-import correct from '../../../assets/Icons/tick-circle.svg'
-import { TickCircle } from '../../../assets/Icons/tick-circle'
-import Image from 'next/image'
+import { Checkmark12Regular,  } from '@fluentui/react-icons'
 
 interface StepProps {
   step?: number
@@ -16,12 +13,17 @@ export function Step({ step, stage, isCurrent, isDone }: StepProps) {
   return (
     <Container className="flex flex-col xl:flex-row items-center justify-between xl:gap-5 gap-2 text-black">
       {isDone ? (
-        <div>
-          <TickCircle width="40px" height="40px" />
+        <div
+          className={`flex items-center justify-center w-10 h-10 rounded-full bg-[#85BF55]`}
+        >
+          <Checkmark12Regular
+            style={{ width: '30px', height: '30px' }}
+            color="white"
+          />
         </div>
       ) : (
         <div
-          className={`flex items-center text-center justify-center w-9 h-9 rounded-full    ${
+          className={`flex items-center text-center justify-center w-10 h-10 rounded-full    ${
             isCurrent
               ? `bg-[#2C7EF8] text-[#FFFFFF] `
               : `text-[#2C7EF8] border-[2px] border-[#2C7EF8]`
